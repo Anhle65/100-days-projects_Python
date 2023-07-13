@@ -1,0 +1,6 @@
+In SMTP call, should change the port because in default it's 25 but now it may be blocked.
+Put Subject: in the msg to make it will noe be in the spam mail category.
+To start the content, use 2 new lines (\n\n) to separate.
+Take the password in the security -> app password -> add new app and get the code.
+Random.choices >> list
+Random.choice >> element
