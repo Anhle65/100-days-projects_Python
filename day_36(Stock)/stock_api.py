@@ -18,7 +18,7 @@ def get_currency_status():
     date_and_time = data['Realtime Currency Exchange Rate']['6. Last Refreshed'].split()
     date = date_and_time[0]
     time = date_and_time[1]
-    return f"The exchange rate is: {float(currency):.2f} \n The last time refreshed on {date} at {time} UTC"
+    return f"The exchange rate is: {float(currency):.2f} \n The last time refreshed on {date} at {time} UTC", float(currency)
 
 
 def send_email(message):
@@ -34,10 +34,13 @@ def send_email(message):
 
 
 def main():
-    message = get_currency_status()
-    send_email(message)
+    message, rate = get_currency_status()
+    if rate <= 14500:
+    # send_email(message)
     # This is for seeing the message sent to email
-    print(message)
+        print(rate)
+    else:
+        print(1)
 
 
 main()
